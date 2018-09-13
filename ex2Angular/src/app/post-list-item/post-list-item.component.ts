@@ -12,23 +12,22 @@ export class PostListItemComponent implements OnInit {
   @Input() loveIts: number;
   created_at: Date = new Date();
 
-  getColor(){
-    if (this.loveIts > 0)
+  getColor() {
+    if (this.loveIts > 0) {
       return 'list-group-item-success';
+    }
     else if (this.loveIts < 0)
       return 'list-group-item-danger';
     else
       return 'list-group-item';
   }
 
-  like()
-  {
-    this.loveIts+=1;
+  like() {
+    this.loveIts += 1;
   }
 
-  dislike()
-  {
-    this.loveIts-=1;
+  dislike() {
+    this.loveIts -= 1;
   }
 
   constructor() { }
