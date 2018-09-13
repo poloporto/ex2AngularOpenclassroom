@@ -20,10 +20,12 @@ export class PostService {
   }
 
   like(id: number) {
-    this.posts[id].loveIts += 1;
+    this.posts[id].setLoveIts(this.posts[id].getLoveIts()+1);
+    this.emitPosts();
   }
 
   dislike(id: number) {
-    this.posts[id].loveIts -= 1;
+    this.posts[id].setLoveIts(this.posts[id].getLoveIts()-1);
+    this.emitPosts();
   }
 }

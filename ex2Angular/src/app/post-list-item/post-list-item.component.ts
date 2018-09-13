@@ -30,14 +30,14 @@ export class PostListItemComponent implements OnInit {
       return 'list-group-item';
   }
 
-  like(id: number) {
+  like() {
     this.loveIts += 1;
-    this.postsService.like(id);
+    this.postsService.like(this.id);
   }
 
-  dislike(id: number) {
+  dislike() {
     this.loveIts -= 1;
-    this.postsService.dislike(id);
+    this.postsService.dislike(this.id);
   }
 
   deletePost(id: number){
