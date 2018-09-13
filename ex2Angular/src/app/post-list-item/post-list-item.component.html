@@ -1,0 +1,7 @@
+<li [ngClass]=getColor() style="width:50%; left:25%; position: relative; padding: 15px; display:table">
+  <div style="float: right;">{{ this.created_at | date:'MM/dd/yyyy, h:mm a' | uppercase }}</div>
+  <h3 style="margin-top: 0px;">{{ this.title }} </h3>
+  <div>{{ this.content }}</div>
+  <button class="btn btn-success" (click)=like()>Love It!</button>
+  <button class="btn btn-success" (click)=dislike()>Don't love It!</button>
+</li>
