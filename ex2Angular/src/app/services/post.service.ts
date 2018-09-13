@@ -14,15 +14,16 @@ export class PostService {
     this.emitPosts();
   }
 
-  removePost(post: Post) {
-    const postIndexToRemove = this.posts.findIndex(
-      (postE1) => {
-        if (postE1 === post) {
-          return true;
-        }
-      }
-    );
-    this.posts.splice(postIndexToRemove, 1);
+  removePost(id: number) {
+    this.posts.splice(id, 1);
     this.emitPosts();
+  }
+
+  like(id: number) {
+    this.posts[id].loveIts += 1;
+  }
+
+  dislike(id: number) {
+    this.posts[id].loveIts -= 1;
   }
 }
